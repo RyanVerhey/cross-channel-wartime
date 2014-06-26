@@ -66,7 +66,8 @@ showWarMessage = (war, year) ->
 
 $ ->
   $ "#year-input"
-    .submit ->
+    .submit (e) ->
+      e.preventDefault()
       atWar $("#year").val()
       $ "#year"
         .val("")
