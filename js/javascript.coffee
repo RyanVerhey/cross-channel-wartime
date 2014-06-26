@@ -16,6 +16,8 @@ atWar = (year) ->
   showWarMessage(war, year)
 
 showWarMessage = (war, year) ->
+  $ "#war-message"
+    .removeClass "hidden"
   if war != -1
     alert "Yes"
     alert "Hasn't happened yet"
