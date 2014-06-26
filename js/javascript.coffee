@@ -53,7 +53,7 @@ showWarMessage = (war, year) ->
     .removeClass "hidden"
   if isNaN(year) && typeof year != "string"
     $ "#war-message"
-      .html "<p>You haven't inputted anything! Try typing a year above.</p>"
+      .html "<p>You haven't inputted a year! Try typing a year above.</p>"
   else if war != -1
     $ "#war-message"
       .html "<p>In <year>" + year + "</year>, England and France <b>WERE</b> at war."
