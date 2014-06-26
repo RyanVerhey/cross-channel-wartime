@@ -72,3 +72,12 @@ $ ->
       $ "#year"
         .val("")
       $("#year").focus()
+
+  $ "#ryan button"
+    .click (e) ->
+      openInNewTab("http://ryanverhey.com")
+
+  $ "#history button"
+    .click (e) ->
+      openInNewTab("http://missedinhistory.com")
+
