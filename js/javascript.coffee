@@ -22,3 +22,11 @@ showWarMessage = (war, year) ->
     alert "Hasn't happened yet"
   else
     alert "No"
+
+$ ->
+  $ "#year-input"
+    .submit ->
+      atWar $("#year").val()
+      $ "#year"
+        .val("")
+      $("#year").focus()
