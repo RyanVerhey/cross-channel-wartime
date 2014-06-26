@@ -14,3 +14,11 @@ atWar = (year) ->
   year = parseInt(year)
   war = $.inArray(year, warYears)
   showWarMessage(war, year)
+
+showWarMessage = (war, year) ->
+  if war != -1
+    alert "Yes"
+  else if year >= new Date().getFullYear()
+    alert "Hasn't happened yet"
+  else
+    alert "No"
