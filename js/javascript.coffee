@@ -47,9 +47,10 @@ atWar = (year) ->
 showWarMessage = (war, year) ->
   $ "#war-message"
     .removeClass "hidden"
-  if war != -1
+  if isNaN(year) && typeof year != "string"
     $ "#war-message"
       .html "<p>In " + year + ", England and France <b>WERE</b> at war."
+  else if war != -1
   else if year > new Date().getFullYear()
     $ "#war-message"
       .html "<p>" + year + " hasn't even happened yet! How am I supposed to know?</p>"
