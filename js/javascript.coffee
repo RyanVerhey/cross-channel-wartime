@@ -18,8 +18,8 @@ atWar = (year) ->
 showWarMessage = (war, year) ->
   if war != -1
     alert "Yes"
-  else if year >= new Date().getFullYear()
     alert "Hasn't happened yet"
+  else if year > new Date().getFullYear()
   else
     alert "No"
 
