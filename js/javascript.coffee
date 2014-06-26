@@ -1,3 +1,7 @@
+openInNewTab = (url) ->
+  win = window.open(url, '_blank')
+  win.focus()
+
 range = (first,last) ->
   numArray = []
   for i in [first..last]
@@ -39,26 +43,40 @@ warYears = flatten([1066, 1475, 1488, 1815,
 
 atWar = (year) ->
   year = parseInt(year)
+  if year < 0
+    year = (year * -1) + " BCE"
   war = $.inArray(year, warYears)
   showWarMessage(war, year)
 
 showWarMessage = (war, year) ->
   $ "#war-message"
     .removeClass "hidden"
-  if war != -1
+  if isNaN(year) && typeof year != "string"
     $ "#war-message"
-      .html "<p>In " + year + ", England and France <b>WERE</b> at war."
+      .html "<p>You haven't inputted a year! Try typing a year above.</p>"
+  else if war != -1
+    $ "#war-message"
+      .html "<p>In <year>" + year + "</year>, England and France <b>WERE</b> at war."
   else if year > new Date().getFullYear()
     $ "#war-message"
-      .html "<p>" + year + " hasn't even happened yet! How am I supposed to know?</p>"
+      .html "<p>The year <year>" + year + "</year> is still in the future! How am I supposed to know?</p>"
   else
     $ "#war-message"
-      .html("<p>In " + year + ", England and France <b>WERE NOT</b> at war.")
+      .html "<p>In <year>" + year + "</year>, England and France <b>WERE NOT</b> at war."
 
 $ ->
   $ "#year-input"
-    .submit ->
+    .submit (e) ->
+      e.preventDefault()
       atWar $("#year").val()
       $ "#year"
         .val("")
       $("#year").focus()
+
+  $ "#ryan button"
+    .click (e) ->
+      openInNewTab("http://ryanverhey.com")
+
+  $ "#history button"
+    .click (e) ->
+      openInNewTab("http://missedinhistory.com")

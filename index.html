@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Cross-Channel Wartime</title>
-    <meta name="robots" content="noindex,nofollow" />
+    <!-- <meta name="robots" content="noindex,nofollow" /> -->
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -18,11 +18,21 @@
 
   <body>
     <div id="content">
+      <div id="title">
+        <h1>Cross-Channel Wartime!</h1>
+        <h3>Type in a year below to see if England and France were at war at the time.</h3><br><br>
+      </div>
       <form id="year-input" action="#" method="get">
-        Year: <input id="year" type="number" placeholder="Type year here" autofocus>
-        <input type="submit" value="War?">
-      </form>
-      <div id="war-message" class="hidden"></div>
+        <input id="year" type="number" placeholder="Type year here" autofocus><br><br>
+        <input type="submit" value="Were They At War?">
+      </form><br>
+      <div id="war-message" class="hidden"><p> </p></div>
+    </div>
+    <div id="ryan">
+      <button type="button">&copy;2014 Ryan Verhey. All Rights Reserved.</button>
+    </div>
+    <div id="history">
+      <button type="button">Inspired by "Stuff You Missed in History Class"</button>
     </div>
   </body>
 </html>
