@@ -1,2 +1,74 @@
+$light-beige: #FDFDF8
+$cool-blue: #4682B4
+$foam-green: #67EDB7
+$dark-foam-green: #44B386
+$not-quite-black: #262626
+
+=button-hover
+  background: $dark-foam-green
+  border: 1px solid $foam-green
+  color: white
+
+=button-focus
+  box-shadow: 0px 0px 3px 2px $foam-green
+  outline: none
+
+body
+  background: $light-beige
+  color: $light-beige
+
+b, year
+  color: $foam-green
+
 .hidden
-  display: none
+  visibility: hidden
+
+#content
+  background: $cool-blue
+  border-radius: 25px
+  text-align: center
+  margin: 0 auto
+  margin-top: 20px
+  padding: 30px 0
+  width: 600px
+
+#ryan button, #history button
+  background: $foam-green
+  border: 1px solid $dark-foam-green
+  border-radius: 5px
+  bottom: 10px
+  color: $not-quite-black
+  position: absolute
+  &:hover
+    +button-hover
+  &:focus
+    +button-focus
+
+#history button
+  right: 10px
+
+#ryan button
+  left: 10px
+
+#year-input
+  input[type="number"]
+    background: $light-beige
+    border: none
+    border-radius: 5px
+    height: 25px
+    text-align: center
+    &:focus
+      box-shadow: 0px 0px 3px 2px $foam-green
+      outline: none
+  input[type="submit"]
+    background: $foam-green
+    border: 1px solid $dark-foam-green
+    border-radius: 5px
+    color: $not-quite-black
+    font-size: 1.3em
+    height: 50px
+    width: 200px
+    &:focus
+      +button-focus
+    &:hover
+      +button-hover
