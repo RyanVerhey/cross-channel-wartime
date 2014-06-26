@@ -1,3 +1,7 @@
+openInNewTab = (url) ->
+  win = window.open(url, '_blank')
+  win.focus()
+
 range = (first,last) ->
   numArray = []
   for i in [first..last]
