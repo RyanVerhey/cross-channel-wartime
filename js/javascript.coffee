@@ -80,4 +80,3 @@ $ ->
   $ "#history button"
     .click (e) ->
       openInNewTab("http://missedinhistory.com")
-
