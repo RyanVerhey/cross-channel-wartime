@@ -39,6 +39,8 @@ warYears = flatten([1066, 1475, 1488, 1815,
 
 atWar = (year) ->
   year = parseInt(year)
+  if year < 0
+    year = (year * -1) + " BCE"
   war = $.inArray(year, warYears)
   showWarMessage(war, year)
 
