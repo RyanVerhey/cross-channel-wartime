@@ -1,0 +1,79 @@
+body {
+  background: #fdfdf8;
+  color: #fdfdf8; }
+
+b, year {
+  color: #67edb7; }
+
+.hidden {
+  visibility: hidden; }
+
+#content {
+  background: steelblue;
+  border-radius: 25px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 30px 0;
+  max-width: 600px; }
+
+#ryan button, #history button {
+  background: #67edb7;
+  border: 1px solid #44b386;
+  border-radius: 5px;
+  bottom: 10px;
+  color: #262626;
+  position: absolute; }
+  #ryan button:hover, #history button:hover {
+    background: #44b386;
+    border: 1px solid #67edb7;
+    color: white; }
+  #ryan button:focus, #history button:focus {
+    box-shadow: 0px 0px 3px 2px #67edb7;
+    outline: none; }
+
+#history button {
+  right: 10px; }
+
+#ryan button {
+  left: 10px; }
+
+#year-input input[type="number"] {
+  background: #fdfdf8;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  text-align: center; }
+  #year-input input[type="number"]:focus {
+    box-shadow: 0px 0px 3px 2px #67edb7;
+    outline: none; }
+#year-input input[type="submit"] {
+  background: #67edb7;
+  border: 1px solid #44b386;
+  border-radius: 5px;
+  color: #262626;
+  font-size: 1.3em;
+  height: 50px;
+  width: 200px; }
+  #year-input input[type="submit"]:focus {
+    box-shadow: 0px 0px 3px 2px #67edb7;
+    outline: none; }
+  #year-input input[type="submit"]:hover {
+    background: #44b386;
+    border: 1px solid #67edb7;
+    color: white; }
+
+@media (max-width: 600px) {
+  #content {
+    margin-top: 0;
+    border-radius: 0;
+  }
+  #ryan button, #history button {
+    display: block;
+    margin: 10px auto;
+    position: static;
+  }
+  body {
+    background-color: steelblue;
+  }
+}
