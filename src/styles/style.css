@@ -2,7 +2,7 @@ body {
   background: #fdfdf8;
   color: #fdfdf8; }
 
-b, year {
+b, span.year {
   color: #67edb7; }
 
 .hidden {
@@ -17,25 +17,28 @@ b, year {
   padding: 30px 0;
   max-width: 600px; }
 
-#ryan button, #history button {
+#ryan a, #history a {
   background: #67edb7;
   border: 1px solid #44b386;
   border-radius: 5px;
   bottom: 10px;
   color: #262626;
-  position: absolute; }
-  #ryan button:hover, #history button:hover {
+  display: block;
+  padding: 5px;
+  position: absolute;
+  text-decoration: none; }
+  #ryan a:hover, #history a:hover {
     background: #44b386;
     border: 1px solid #67edb7;
     color: white; }
-  #ryan button:focus, #history button:focus {
+  #ryan a:focus, #history a:focus {
     box-shadow: 0px 0px 3px 2px #67edb7;
     outline: none; }
 
-#history button {
+#history a {
   right: 10px; }
 
-#ryan button {
+#ryan a {
   left: 10px; }
 
 #year-input input[type="number"] {
@@ -68,7 +71,7 @@ b, year {
     margin-top: 0;
     border-radius: 0;
   }
-  #ryan button, #history button {
+  #ryan a, #history a {
     display: block;
     margin: 10px auto;
     position: static;
