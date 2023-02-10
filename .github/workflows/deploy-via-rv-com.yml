@@ -2,18 +2,19 @@ name: Deploy via RV.com
 
 on:
   workflow_call:
-    inputs:
-      build_path:
-        required: true
-        type: String
+    outputs:
+      ccw_artifact_name:
+        description: "The name of the artifact"
+        value: ${{ jobs.build.outputs.ccw_artifact_name }}
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_name: ${{ steps.ccw_artifact_name.outputs.ccw_artifact_name }}
     steps:
     - uses: actions/checkout@v3
-      with:
-        path: ${{ GITHUB_WORKSPACE }}/cross-channel-wartime
     - name: Use Node.js 19.6.0
       uses: actions/setup-node@v3
       with:
@@ -27,8 +28,14 @@ jobs:
       id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
       with:
         path: ${{ steps.npm-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ hashFiles('${{ GITHUB_WORKSPACE }}/cross-channel-wartime/package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
     - run: npm ci
-    - run: BUILD_PATH=${{ inputs.build_path }} npm run build
+    - run: npm run build
+    - id: ccw_artifact_name
+      run: echo "ccw_artifact_name=ccw_artifact" >> $GITHUB_OUTPUT
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ${{ steps.ccw_artifact_name.outputs.ccw_artifact_name }}
+        path: ./build
