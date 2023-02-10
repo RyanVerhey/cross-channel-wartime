@@ -18,7 +18,7 @@ const angloFrenchWarFourteen: string = 'Anglo-French War, part the American Revo
 const angloFrenchWarFifteen: string = 'Anglo-French War, part of the French Revolutionary Wars';
 const overlapOne: string = 'Anglo-French War, part of the French Revolutionary Wars and the Hatian Rebellion';
 const overlapTwo: string = 'Anglo-French War, part of the Haitian Revolution and part of the Napoleonic Wars';
-const angloFrenchWarSixteen: string = '';
+// const angloFrenchWarSixteen: string = '';
 const angloFrenchWarSeventeen: string = 'Anglo-French War, part of the Napoleonic Wars (Peninsular War)';
 const angloFrenchWarEighteen: string = 'Anglo-French War, part of the Napoleonic Wars (Waterloo Campaign)';
 
