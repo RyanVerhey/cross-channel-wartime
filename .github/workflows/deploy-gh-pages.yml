@@ -20,6 +20,12 @@ jobs:
       with:
         node-version: 19.6.0
         cache: 'npm'
+    - name: Cache modules
+      id: cache-node_modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
     - run: npm ci
     - run: npm run build
     - uses: actions/upload-pages-artifact@v1.0.7
