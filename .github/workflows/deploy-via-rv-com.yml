@@ -17,6 +17,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: RyanVerhey/cross-channel-wartime
+        ref: 'use-github-pages'
     - run: pwd
     - run: ls -la
     - name: Use Node.js 19.6.0
