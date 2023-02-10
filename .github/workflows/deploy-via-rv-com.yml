@@ -11,10 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
       with:
         repository: RyanVerhey/cross-channel-wartime
-        ref: 'use-github-pages'
     - name: Use Node.js 19.6.0
       uses: actions/setup-node@v3
       with:
@@ -31,9 +31,12 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - run: npm ci
-    - run: npm run build
-    - uses: actions/upload-artifact@v3
+    - name: Install Dependencies
+      run: npm ci
+    - name: Build
+      run: npm run build
+    - name: Uploading artifact
+      uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.artifact_name }}
         path: ./build
