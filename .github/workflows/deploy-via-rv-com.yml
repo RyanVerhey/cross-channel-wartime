@@ -6,11 +6,6 @@ on:
       artifact_name:
         required: true
         type: string
-    outputs:
-      ccw_artifact_name:
-        description: "The name of the artifact"
-        value: ${{ jobs.build.outputs.ccw_artifact_name }}
-
 
 jobs:
   build:
@@ -42,8 +37,6 @@ jobs:
     - run: ls -la
     - run: npm ci
     - run: npm run build
-    - id: ccw_artifact_name
-      run: echo "ccw_artifact_name=cross-channel-wartime" >> $GITHUB_OUTPUT
     - uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.artifact_name }}
